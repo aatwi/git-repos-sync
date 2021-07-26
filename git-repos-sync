@@ -9,7 +9,7 @@ if [ ! -d ".git" ]; then
 	echo "Git repo for syncronization is not found, creating one..."
 	git init
 	git fetch $1
-	git checkout -b master FETCH_HEAD	
+	git checkout -b main FETCH_HEAD	
 	echo
 fi
 
@@ -64,7 +64,7 @@ if ! git push $1 HEAD:$3; then
 
 fi	
 
-git checkout --quiet master
+git checkout --quiet main
 git branch -D --quiet sync-$3
 
 echo "Done."
